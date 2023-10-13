@@ -51,4 +51,5 @@ node{
             kubeconfigId: 'Kube-Config'
         )
     }    
+  }
 }
