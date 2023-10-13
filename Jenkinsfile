@@ -6,9 +6,7 @@ node{
     
     stage('Build and Test') {
       steps {
-        sh 'ls -ltr'
-        // build the project and create a JAR file
-        sh 'cd maven-web-app && mvn clean package'
+        sh 'mvn clean package'
     }
     
     stage('SonarQube analysis') {       
