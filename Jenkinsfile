@@ -4,10 +4,11 @@ node{
         git credentialsId: 'github', url: 'https://github.com/ramki46/maven-web-app.git'
     }
     
-    stage('Maven Build'){
-        def mavenHome = tool name: "maven-3.6.3", type: "maven"
-        def mavenCMD = "${mavenHome}/bin/mvn"
-        sh "${mavenCMD} clean package"
+    stage('Build and Test') {
+      steps {
+        sh 'ls -ltr'
+        // build the project and create a JAR file
+        sh 'cd maven-web-app && mvn clean package'
     }
     
     stage('SonarQube analysis') {       
