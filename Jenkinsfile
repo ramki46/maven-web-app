@@ -35,14 +35,14 @@ node{
 }
     
     stage('Build Image'){
-        sh 'docker build -t ashokit/mavenwebapp .'
+        sh 'docker build -t ramki46/mavenwebapp .'
     }
     
     stage('Push Image'){
         withCredentials([string(credentialsId: 'DOCKER-CREDENTIALS', variable: 'DOCKER_CREDENTIALS')]) {
-            sh 'docker login -u ashokit -p ${DOCKER_CREDENTIALS}'
+            sh 'docker login -u ramki46 -p ${DOCKER_CREDENTIALS}'
         }
-        sh 'docker push ashokit/mavenwebapp'
+        sh 'docker push ramki46/mavenwebapp'
     }
     
     stage('Deploy App'){
